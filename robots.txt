@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amarah55-coder.github.io/portfolio-mahery-razafimanantsoa/sitemap.xml
