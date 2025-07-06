@@ -1,727 +1,841 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-  <title>Mahery RAZAFIMANANTSOA| Développeur Frontend  | Portfolio</title>
-  <meta name="description" content="Portfolio de Mahery Razafimanantsoa, développeur frontend créatif, passionné par le web interactif et la modélisation 3D avec Blender. Découvrez mes projets et compétences." />
-  <meta name="keywords" content="Mahery Razafimanantsoa, développeur web, frontend, HEI Madagascar, modélisation 3D, Blender, React, HTML, CSS, JavaScript, portfolio, projets web, UI/UX design" />
-  <meta name="author" content="Mahery Razafimanantsoa" />
-  <meta name="robots" content="index, follow" />
-
-
-  <meta name="google-site-verification" content="pP4Zw6YpqwdGnAMRfUfhi29zWLtqDFFvGTmkDX1aUiI" />
-  <meta name="msvalidate.01" content="9691DB33ADD9C7C9ABABB2E8A978AAC3" />
-
-
-  <meta property="og:title" content="Portfolio de Mahery Razafimanantsoa" />
-  <meta property="og:description" content="Développeur web créatif, passionné par la 3D, l'UI/UX et l'interaction. Visitez mon portfolio pour découvrir mes projets." />
-  <meta property="og:image" content="https://amarah55-coder.github.io/portfolio-mahery-razafimanantsoa/assets/images/preview.png" />
-  <meta property="og:url" content="https://amarah55-coder.github.io/portfolio-mahery-razafimanantsoa/" />
-  <meta property="og:type" content="website" />
-
-
-  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
-  <link rel="canonical" href="https://amarah55-coder.github.io/portfolio-mahery-razafimanantsoa/" />
-  <base href="./" />
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <title>Mahery RAZAFIMANANTSOA | Portfolio d'Étudiant en Informatique & Cybersécurité</title>
+  <meta name="description"
+    content="Découvrez le portfolio de Mahery RAZAFIMANANTSOA, étudiant en informatique spécialisé en développement web, UI/UX, et passionné par la cybersécurité. Explorez ses projets, son parcours scolaire et professionnel, et ses compétences.">
+  <meta name="keywords"
+    content="Mahery RAZAFIMANANTSOA, portfolio informatique, étudiant informatique, développement web, UI/UX design, cybersécurité, administrateur réseau, scripts Linux, JavaScript, React, HTML, CSS, Java, PostgreSQL, Tailwind CSS, Figma, WordPress, Passarelles Numériques, Madagascar, Antananarivo">
+  <meta name="author" content="Mahery RAZAFIMANANTSOA">
+  <link rel="canonical" href="https://votre-portfolio-url.com/">
+  <meta property="og:title" content="Mahery RAZAFIMANANTSOA | Portfolio d'Étudiant en Informatique & Cybersécurité">
+  <meta property="og:description"
+    content="Découvrez le parcours, les compétences et les projets de Mahery RAZAFIMANANTSOA, étudiant passionné d'informatique, de développement web et de cybersécurité.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://votre-portfolio-url.com/">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="./styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Définition des nouvelles couleurs pour un thème clair */
+    :root {
+      --primary-light: #FFFFFF;
+      /* Blanc pur pour le fond principal */
+      --secondary-light: #F8F8F8;
+      /* Gris très clair pour les sections secondaires/cartes, légèrement plus doux que F0F0F0 */
+      --primary-dark: #1A1A1A;
+      /* Noir pour le texte principal et les contrastes */
+      --accent-gold: #FFD700;
+      /* Jaune d'or pour l'accent */
+      --accent-gold-darker: #E0B900;
+      /* Une teinte de jaune d'or légèrement plus foncée pour les hover */
+      --gray-text: #4F4F4F;
+      /* Gris foncé pour les textes secondaires, légèrement plus foncé pour meilleure lisibilité */
+      --border-color: #E5E5E5;
+      /* Couleur de bordure subtile */
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      scroll-behavior: smooth;
+    }
+
+    /* Gradient de texte avec le jaune d'or sur fond clair */
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-darker));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Bordure dégradée avec le jaune d'or */
+    .gradient-border {
+      position: relative;
+    }
+
+    .gradient-border::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0.5rem;
+      padding: 2px;
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-darker));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    /* Fond liquide avec des couleurs subtiles pour un thème clair */
+    .liquid-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.02;
+      /* Encore plus subtil */
+      background: radial-gradient(circle at 50% 50%, var(--accent-gold), transparent 70%),
+        radial-gradient(circle at 30% 70%, #FFEB3B, transparent 70%),
+        radial-gradient(circle at 70% 30%, #FFAB00, transparent 70%);
+      animation: liquid-move 20s infinite alternate;
+    }
+
+    @keyframes liquid-move {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+
+      50% {
+        transform: scale(1.1) rotate(2deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-link {
+      position: relative;
+      color: var(--primary-dark);
+      font-weight: 500;
+      /* Slightly bolder for better readability */
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      /* Adjust position to be slightly below */
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-darker));
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      /* Add active state for current page */
+      width: 100%;
+    }
+
+    /* Boutons avec dégradé de jaune d'or */
+    .btn-gradient {
+      background: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-darker));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: var(--primary-dark);
+      font-weight: 600;
+      /* Make text bolder on buttons */
+    }
+
+    .btn-gradient:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -8px rgba(255, 215, 0, 0.4);
+      /* Ombre jaune plus prononcée et douce */
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border-color);
+      color: var(--gray-text);
+      font-weight: 600;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--secondary-light);
+      border-color: var(--accent-gold);
+      color: var(--primary-dark);
+    }
+
+
+    .skill-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--primary-light);
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px -5px rgba(0, 0, 0, 0.05);
+      /* Subtle shadow on hover */
+    }
+
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: var(--primary-light);
+      border: 1px solid var(--border-color);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      /* Slightly less aggressive lift */
+      box-shadow: 0 18px 30px -8px rgba(0, 0, 0, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+      /* Lighter, diffused shadow */
+    }
+
+    /* Blobs de fond avec des couleurs claires */
+    .blob {
+      position: absolute;
+      width: 350px;
+      /* Slightly larger */
+      height: 350px;
+      /* Slightly larger */
+      border-radius: 50%;
+      filter: blur(100px);
+      /* More blur */
+      opacity: 0.03;
+      /* Even more subtle */
+      z-index: -1;
+      animation: blob-move 18s infinite alternate ease-in-out;
+      /* Slower and smoother */
+    }
+
+    .blob-gold-1 {
+      background: var(--accent-gold);
+      top: 15%;
+      left: 5%;
+    }
+
+    .blob-gold-2 {
+      background: #FFC107;
+      bottom: 15%;
+      right: 5%;
+    }
+
+    @keyframes blob-move {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(60px, -60px) scale(1.05);
+      }
+
+      66% {
+        transform: translate(-60px, 60px) scale(0.95);
+      }
+
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease-out;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Ajustements Tailwind CSS pour les nouvelles couleurs */
+    .bg-white {
+      background-color: var(--primary-light);
+    }
+
+    .bg-gray-100 {
+      background-color: var(--secondary-light);
+    }
+
+    .text-black {
+      color: var(--primary-dark);
+    }
+
+    .text-gray-700 {
+      color: var(--gray-text);
+    }
+
+    .text-gray-600 {
+      color: var(--gray-text);
+    }
+
+    .border-gray-300 {
+      border-color: var(--border-color);
+    }
+
+    .hover\:bg-gray-100:hover {
+      background-color: var(--secondary-light);
+    }
+
+    .bg-gray-200 {
+      background-color: var(--secondary-light);
+      color: var(--gray-text);
+      /* Tags plus discrets */
+      border: 1px solid var(--border-color);
+    }
+
+    /* Icônes de compétences et contact en jaune d'or */
+    .fa-js,
+    .fa-html5,
+    .fa-css3-alt,
+    .fa-java,
+    .fa-database,
+    .fa-react,
+    .fa-wind,
+    .fa-bootstrap,
+    .fa-git-alt,
+    .fa-github,
+    .fa-figma,
+    .fa-wordpress,
+    .fa-linux,
+    .fa-paint-brush,
+    .fa-lightbulb,
+    .fa-user-shield,
+    .fa-comments,
+    .fa-envelope,
+    .fa-phone-alt,
+    .fa-linkedin,
+    .fa-download,
+    .fa-network-wired,
+    .fa-bezier-curve,
+    .fa-brain,
+    .fa-hands-helping,
+    .fa-language {
+      color: var(--accent-gold);
+    }
+
+    /* Ajustement des couleurs de fond dans le HTML */
+    nav,
+    .mobile-menu,
+    footer {
+      background-color: var(--primary-light);
+    }
+
+    #about,
+    #projects {
+      background-color: var(--secondary-light);
+    }
+
+    .project-card,
+    .skill-group-card,
+    .contact-card {
+      background-color: var(--primary-light);
+      /* Cartes sur fond blanc pour un effet plus propre */
+      border: 1px solid var(--border-color);
+      /* Ajout de bordures subtiles */
+    }
+
+    .skill-item-inner {
+      background-color: var(--primary-light);
+      border: 1px solid var(--border-color);
+    }
+
+    .input-field {
+      background-color: var(--primary-light);
+      border: 1px solid var(--border-color);
+      color: var(--primary-dark);
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+    }
+
+    .input-field:focus {
+      border-color: var(--accent-gold);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+      /* Subtle focus ring */
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mahery RAZAFIMANANTSOA",
+      "url": "https://votre-portfolio-url.com/",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      "sameAs": [
+        "https://linkedin.com/in/mahery",
+        "https://github.com/mahery"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Passarelles Numériques"
+      },
+      "jobTitle": "Étudiant en Informatique & Bâtisseur d'Expériences Numériques",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "VetClinic",
+          "description": "Stage de découverte en administration réseau"
+        }
+      ],
+      "knowsAbout": ["Développement Web", "Cybersécurité", "UI/UX Design", "Administration Réseau", "Programmation"],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Développeur Junior",
+        "description": "Développement web, scripting Linux et design d'interface utilisateur"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Antananarivo",
+        "addressRegion": "Analamanga",
+        "addressCountry": "MG"
+      }
+    }
+  </script>
 </head>
 
- <body class="relative">
+<body>
+  <div class="liquid-bg"></div>
+
+  <div class="blob blob-gold-1"></div>
+  <div class="blob blob-gold-2"></div>
+
   <header>
-   <div id="canvas-container">
-   </div>
-   <nav class="fixed w-full z-50 bg-opacity-80 backdrop-filter backdrop-blur-lg bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="flex items-center justify-between h-16">
-      <div class="flex items-center">
-       <div class="flex-shrink-0">
-        <span class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-         Mahery
-        </span>
-       </div>
-       <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-4">
-         <a class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white" href="#home">
-          Accueil
-         </a>
-         <a class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white" href="#about">
-          A propos
-         </a>
-         <a class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white" href="#skills">
-          Comp&eacute;tences
-         </a>
-         <a class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white" href="#projects">
-          Projets
-         </a>
-         <a class="nav-link px-3 py-2 rounded-md text-sm font-medium text-white" href="#contact">
-          Contact
-         </a>
+    <nav class="fixed w-full z-50 bg-opacity-90 backdrop-blur-sm shadow-sm"
+      style="background-color: var(--primary-light);">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a href="#home" class="text-xl font-bold gradient-text">Mahery R.</a>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a href="#home" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+              <a href="#about" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Mon Histoire</a>
+              <a href="#skills" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Mes Compétences</a>
+              <a href="#projects" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Mes Réalisations</a>
+              <a href="#contact" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+            </div>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </button>
+          </div>
         </div>
-       </div>
       </div>
-      <div class="hidden md:block">
-       <a class="px-4 py-2 rounded-md text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition duration-300" href="#contact">
-        Contacter moi
-       </a>
+
+      <div id="mobile-menu"
+        class="mobile-menu md:hidden fixed inset-y-0 right-0 w-64 bg-opacity-95 backdrop-blur-sm shadow-lg"
+        style="background-color: var(--primary-light);">
+        <div class="flex items-center justify-between px-4 pt-4">
+          <span class="text-xl font-bold gradient-text">Mahery R.</span>
+          <button id="close-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-col px-4 pt-8 space-y-4">
+          <a href="#home" class="nav-link px-3 py-2 rounded-md text-base font-medium">Accueil</a>
+          <a href="#about" class="nav-link px-3 py-2 rounded-md text-base font-medium">Mon Histoire</a>
+          <a href="#skills" class="nav-link px-3 py-2 rounded-md text-base font-medium">Mes Compétences</a>
+          <a href="#projects" class="nav-link px-3 py-2 rounded-md text-base font-medium">Mes Réalisations</a>
+          <a href="#contact" class="nav-link px-3 py-2 rounded-md text-base font-medium">Contact</a>
+        </div>
       </div>
-      <div class="md:hidden">
-       <button class="text-gray-300 hover:text-white focus:outline-none" id="mobile-menu-button">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-         </path>
-        </svg>
-       </button>
-      </div>
-     </div>
-    </div>
-    <!-- Mobile menu -->
-    <div class="mobile-menu md:hidden fixed inset-y-0 right-0 w-64 bg-gray-900 bg-opacity-95 z-50 p-4" id="mobile-menu">
-     <div class="flex justify-end">
-      <button class="text-gray-300 hover:text-white focus:outline-none" id="close-menu-button">
-       <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-        </path>
-       </svg>
-      </button>
-     </div>
-     <div class="mt-8 flex flex-col space-y-4">
-      <a class="nav-link px-3 py-2 rounded-md text-base font-medium text-white" href="#home">
-       Accueil
-      </a>
-      <a class="nav-link px-3 py-2 rounded-md text-base font-medium text-white" href="#about">
-       A propos
-      </a>
-      <a class="nav-link px-3 py-2 rounded-md text-base font-medium text-white" href="#skills">
-       Comp&eacute;tences
-      </a>
-      <a class="nav-link px-3 py-2 rounded-md text-base font-medium text-white" href="#projects">
-       Projets
-      </a>
-      <a class="nav-link px-3 py-2 rounded-md text-base font-medium text-white" href="#contact">
-       Contact
-      </a>
-      <a class="mt-4 px-4 py-2 rounded-md text-base font-medium text-center text-white bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition duration-300" href="#contact">
-       Appelez moi
-      </a>
-     </div>
-    </div>
-   </nav>
+    </nav>
   </header>
+
   <main>
-   <section class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16" id="home">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="text-center md:text-left">
-       <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-         RAZAFIMANANTSOA
-        </span>
-        <span class="text-white">
-         Mahery
-        </span>
-       </h1>
-       <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
-        Etudiant Chez
-        <span class="text-purple-400">
-         HEI
-        </span>
-        passionn&eacute; de la
-              programmation et de la mod&eacute;lisation 3D
-       </h2>
-       <p class="text-lg text-gray-300 mb-8 max-w-lg">
-        Je cr&eacute;e des sites vitrines sympa et faciles &agrave; utiliser, et je
-              m&rsquo;amuse aussi avec la peinture et la mod&eacute;lisation.
-       </p>
-       <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-        <a class="px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition duration-300 transform hover:scale-105" href="#projects">
-         Voir mes projets
-        </a>
-        <a class="px-6 py-3 rounded-lg text-white font-medium border-2 border-purple-500 hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 transform hover:scale-105" href="#contact">
-         Me contacter
-        </a>
-       </div>
-      </div>
-      <div class="relative flex justify-center">
-       <div class="relative w-64 h-64 md:w-80 md:h-80">
-        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 blur-xl opacity-30 animate-pulse">
-        </div>
-        <div class="relative card-3d rounded-2xl overflow-hidden border-2 border-purple-500 glow">
-         <img alt="D&eacute;veloppement frontend moderne" class="w-full h-full object-cover" loading="lazy" src="./assets/images/avatar_Mahery.png"/>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="absolute bottom-10 left-0 right-0 flex justify-center">
-     <a class="text-gray-300 hover:text-white animate-bounce" href="#about">
-      <svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-       <path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-       </path>
-      </svg>
-     </a>
-    </div>
-   </section>
-   <!-- About Section -->
-   <section class="py-20 bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-sm" id="about">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="section-title text-3xl md:text-4xl font-bold text-white">
-       &Agrave;
-       <span class="text-purple-400">
-        Propos
-       </span>
-      </h2>
-      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-       D&eacute;couvrez qui je suis et ce que je fais
-      </p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="flex justify-center">
-       <div class="relative w-64 h-64 md:w-80 md:h-80">
-        <div class="absolute -inset-4 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 blur-lg opacity-30">
-        </div>
-        <div class="relative card-3d rounded-2xl overflow-hidden border-2 border-purple-500">
-         <img alt="&Agrave; propos de moi" class="w-full h-full object-cover" loading="lazy" src="./assets/images/mahery.jpg"/>
-        </div>
-       </div>
-      </div>
-      <div>
-       <h3 class="text-2xl font-semibold text-white mb-4">
-        Qui suis-je ?
-       </h3>
-       <p class="text-gray-300 mb-6">
-        Etudiant en informatique passionn&eacute; des nouveaux Technologies et de
-              l'art. Je cr&eacute;e des inerfaces web interactifs en combinant mes
-              talents en art pour sortir le meilleur de moi.
-       </p>
-       <p class="text-gray-300 mb-6">
-        Mon objectif est de cr&eacute;er des exp&eacute;riences visuelles captivantes en
-              combinant cr&eacute;ativit&eacute; artistique et rigueur technique.
-       </p>
-       <div class="grid grid-cols-2 gap-4 mt-8">
-        <div class="flex items-center">
-         <div class="mr-3 text-purple-400">
-          <i class="fas fa-map-marker-alt">
-          </i>
-         </div>
-         <div>
-          <p class="text-gray-300 text-sm">
-           Localisation
-          </p>
-          <p class="text-white">
-           Itaosy, Antananarivo, Madagascar
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center">
-         <div class="mr-3 text-purple-400">
-          <i class="fas fa-envelope">
-          </i>
-         </div>
-         <div>
-          <p class="text-gray-300 text-sm">
-           Email
-          </p>
-          <p class="text-white">
-           maheryrazafimanantsoa55@gmail.com
-          </p>
-         </div>
-        </div>
-        <div class="flex items-center">
-         <div class="mr-3 text-purple-400">
-          <i class="fas fa-cubes">
-          </i>
-         </div>
-         <div>
-          <p class="text-gray-300 text-sm">
-           Sp&eacute;cialit&eacute;
-          </p>
-          <p class="text-white">
-           Mod&eacute;lisation 3D &amp; Web interactif
-          </p>
-         </div>
-        </div>
-       </div>
-       <div class="mt-8">
-        <a class="inline-flex items-center px-6 py-3 rounded-lg text-white font-medium bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 transition duration-300" href="#">
-         En savoir Plus
-         <i class="fas fa-arrow-right ml-2">
-         </i>
-        </a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- Skills Section -->
-   <section class="py-20 bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-sm" id="skills">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="section-title text-3xl md:text-4xl font-bold text-white">
-       Mes
-       <span class="text-purple-400">
-        Comp&eacute;tences
-       </span>
-      </h2>
-      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-       Les technologies que j'utilise pour m'amuser
-      </p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div>
-       <h3 class="text-2xl font-semibold text-white mb-6">
-        Comp&eacute;tences techniques
-       </h3>
-       <div class="space-y-6">
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           Python
-          </span>
-          <span class="text-purple-400">
-           50%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 50%">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-12 px-4">
+      <div class="max-w-7xl mx-auto text-center">
+        <div class="section">
+          <div
+            class="w-36 h-36 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-4 border-accent-gold mb-6 shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+              alt="Portrait de Mahery RAZAFIMANANTSOA, étudiant en informatique" class="w-full h-full object-cover">
           </div>
-         </div>
-        </div>
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           JavaScript
-          </span>
-          <span class="text-purple-400">
-           62%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 62%">
+          <h1 class="text-4xl md:text-6xl font-bold mb-4 text-primary-dark leading-tight">
+            <span class="gradient-text">Mahery RAZAFIMANANTSOA</span>
+          </h1>
+          <h2 class="text-xl md:text-2xl font-medium text-gray-700 mb-6">
+            Étudiant en Informatique 
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Mon parcours atypique a forgé une détermination inébranlable et une soif constante d'apprendre. Aujourd'hui,
+            je combine ma passion pour la création digitale avec une vision tournée vers la cybersécurité, pour façonner
+            un futur numérique sûr et innovant.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#about" class="btn-gradient font-medium py-3 px-6 rounded-lg shadow-md">
+              Découvrir mon histoire
+            </a>
+            <a href="#projects" class="btn-secondary font-medium py-3 px-6 rounded-lg shadow-sm">
+              Voir mes réalisations
+            </a>
           </div>
-         </div>
         </div>
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           React
-          </span>
-          <span class="text-purple-400">
-           30%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 30%">
+      </div>
+    </section>
+
+    <section id="about" class="py-20 px-4" style="background-color: var(--secondary-light);">
+      <div class="max-w-7xl mx-auto">
+        <div class="section">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Mon Histoire & Ma Vision</h2>
+          <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
+            <div class="md:w-1/3 flex justify-center sticky md:top-24">
+              <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-accent-gold shadow-lg flex-shrink-0">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                  alt="Mahery RAZAFIMANANTSOA en train d'étudier" class="w-full h-full object-cover">
+              </div>
+            </div>
+            <div class="md:w-2/3 text-gray-700 leading-relaxed text-lg">
+              <p class="mb-4">
+                Issu du centre Les Enfants du Soleil à Madagascar, mon histoire est celle d'une détermination
+                profonde. Ce cadre unique a nourri ma résilience et ma curiosité, des qualités qui me guident
+                aujourd'hui dans le monde de l'informatique. Après l'obtention de mon BAC en 2022, j'ai choisi de
+                rejoindre Passarelles Numériques.
+              </p>
+              <p class="mb-4">
+                Mon passage par l'année préparatoire de Passarelles Numériques a été une étape clé. J'y ai découvert
+                les bases solides qui m'ont permis d'intégrer le programme de L1 en Informatique. Une expérience
+                marquante a été mon **stage de découverte du métier d'administrateur réseau chez VetClinic. Cette
+                immersion m'a non seulement donné un aperçu concret de l'infrastructure IT, mais a aussi confirmé mon
+                vif intérêt pour la sécurité des systèmes, une voie que j'aspire à explorer davantage.
+              </p>
+              <p class="mb-4">
+                Actuellement, mes études en L1 me plongent au cœur du développement web, avec une exploration des
+                langages comme JavaScript, HTML, CSS, Java et PSQL, et des frameworks comme Tailwind CSS et
+                Bootstrap. Parallèlement, je cultive une véritable passion pour le web design et l'UI/UX. J'aime
+                donner vie à des idées à travers des maquettes intuitives et esthétiques, et vous en verrez quelques
+                exemples dans mes réalisations. Je développe également des scripts Linux pour faciliter des tâches
+                quotidiennes, une activité qui me permet d'explorer l'automatisation et de partager des solutions
+                pratiques.
+              </p>
+              <p>
+                Mon objectif à long terme est clair : me spécialiser en cybersécurité. Je crois fermement que mes
+                compétences en développement web, mon expérience en réseau et ma capacité à résoudre des problèmes
+                seront des atouts précieux pour protéger les infrastructures numériques de demain. 
+              </p>
+            </div>
           </div>
-         </div>
         </div>
-       </div>
       </div>
-      <div>
-       <h3 class="text-2xl font-semibold text-white mb-6">
-        Comp&eacute;tences Artistiques
-       </h3>
-       <div class="space-y-6">
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           Montage Vid&eacute;o
-          </span>
-          <span class="text-purple-400">
-           25%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 25%">
+    </section>
+
+    <section id="skills" class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="section">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Mes Compétences & Outils</h2>
+
+          <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12">
+            Grâce à mon parcours académique et mes projets personnels, j'ai acquis une base solide en développement et
+            une
+            curiosité pour l'innovation.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="skill-group-card p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-4 text-center gradient-text">Développement Web</h3>
+              <div class="space-y-3">
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-js text-2xl mr-3"></i><span class="font-medium text-primary-dark">JavaScript</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-html5 text-2xl mr-3"></i><span class="font-medium text-primary-dark">HTML &
+                    CSS</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-react text-2xl mr-3"></i><span class="font-medium text-primary-dark">React</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-wind text-2xl mr-3"></i><span class="font-medium text-primary-dark">Tailwind
+                    CSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group-card p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-4 text-center gradient-text">Systèmes & Réseaux</h3>
+              <div class="space-y-3">
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-linux text-2xl mr-3"></i><span class="font-medium text-primary-dark">Linux CLI</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-network-wired text-2xl mr-3"></i><span class="font-medium text-primary-dark">Admin.
+                    Réseau</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-git-alt text-2xl mr-3"></i><span class="font-medium text-primary-dark">Git &
+                    GitHub</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-database text-2xl mr-3"></i><span class="font-medium text-primary-dark">SQL
+                    (PSQL)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group-card p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-4 text-center gradient-text">Design & Outils</h3>
+              <div class="space-y-3">
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-figma text-2xl mr-3"></i><span class="font-medium text-primary-dark">Figma
+                    (UI/UX)</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-wordpress text-2xl mr-3"></i><span
+                    class="font-medium text-primary-dark">WordPress</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-bezier-curve text-2xl mr-3"></i><span
+                    class="font-medium text-primary-dark">Modélisation 3D (intérêt)</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fab fa-java text-2xl mr-3"></i><span class="font-medium text-primary-dark">Java
+                    (bases)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group-card p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-4 text-center gradient-text">Langues & Qualités</h3>
+              <div class="space-y-3">
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-comments text-2xl mr-3"></i><span class="font-medium text-primary-dark">Français
+                    (Certifié)</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-language text-2xl mr-3"></i><span class="font-medium text-primary-dark">Anglais
+                    (Certifié)</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-brain text-2xl mr-3"></i><span class="font-medium text-primary-dark">Apprentissage
+                    Rapide</span>
+                </div>
+                <div class="skill-item p-3 rounded-lg flex items-center shadow-sm">
+                  <i class="fas fa-hands-helping text-2xl mr-3"></i><span
+                    class="font-medium text-primary-dark">Résolution de Problèmes</span>
+                </div>
+              </div>
+            </div>
           </div>
-         </div>
         </div>
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           UI/UX Design
-          </span>
-          <span class="text-purple-400">
-           60%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 60%">
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 px-4" style="background-color: var(--secondary-light);">
+      <div class="max-w-7xl mx-auto">
+        <div class="section">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Mes Réalisations</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="project-card p-6 rounded-lg shadow-md">
+              <div class="h-48 bg-gray-100 rounded-lg mb-4 overflow-hidden"
+                style="background-color: var(--secondary-light);">
+                <img
+                  src="https://kalilinux.in/wp-content/uploads/2025/06/AVvXsEgrztRi2r3BbzP9yuIxJa-hvI90Um9eT2rHpbgsvXE5y5DSG3eKVxmiTX0POM2s1DN3RoC5LMJbFOt3lbm1YrE0JAwNSJBEQAHVMsZPwha8FuObpAJrNHOiImiPr0OciDrdKdYUbnEkwTdOdtQwTEm3t-W3suSJ-493hra6vCGqY4kV4fragNE4n5o-w640-h352.png"
+                  alt="Capture d'écran de Fast Linux Scripts" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary-dark">Fast Linux Scripts</h3>
+              <p class="text-gray-700 mb-4">Une série de scripts conçus pour automatiser et simplifier la gestion
+                quotidienne sous Linux, illustrant ma passion pour l'optimisation système et le partage de solutions.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">Bash</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">Linux</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">CLI</span>
+              </div>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://github.com/votre-utilisateur/fast-linux-scripts" target="_blank"
+                  rel="noopener noreferrer" class="btn-gradient text-sm font-medium py-2 px-4 rounded-lg">
+                  Voir les scripts
+                </a>
+                <a href="https://amarah5.github.io/LinuxScript/"
+                  class="btn-secondary text-sm font-medium py-2 px-4 rounded-lg">
+                  <i class="fas fa-download mr-1"></i>Télécharger
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card p-6 rounded-lg shadow-md">
+              <div class="h-48 bg-gray-100 rounded-lg mb-4 overflow-hidden"
+                style="background-color: var(--secondary-light);">
+                <img
+                  src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                  alt="Exemple de maquette UI/UX Web" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary-dark">UI/UX Web Mockups</h3>
+              <p class="text-gray-700 mb-4">Un aperçu de mes créations en web design, où je traduis des idées en
+                interfaces utilisateur intuitives et esthétiques.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">Figma</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">UI Design</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">UX Research</span>
+              </div>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://www.figma.com/proto/uYTjDLOChAHKIjnxnjGE0m/Untitled?node-id=4-17&t=NBDU9JJCxOB4oGen-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A17" target="_blank" rel="noopener noreferrer"
+                  class="btn-gradient text-sm font-medium py-2 px-4 rounded-lg">
+                  Explorer les maquettes
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card p-6 rounded-lg shadow-md">
+              <div class="h-48 bg-gray-100 rounded-lg mb-4 overflow-hidden"
+                style="background-color: var(--secondary-light);">
+                <img
+                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  alt="Site WordPress réalisé via Coursera" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary-dark">WordPress Coursera</h3>
+              <p class="text-gray-700 mb-4">Site WordPress développé dans le cadre d'une certification Coursera,
+                consolidant mes compétences en gestion de contenu et personnalisation web.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">WordPress</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">CMS</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">Design Web</span>
+              </div>
+              <div class="flex gap-2 mt-auto">
+                <a href="https://votre-site-wordpress.com" target="_blank" rel="noopener noreferrer"
+                  class="btn-gradient text-sm font-medium py-2 px-4 rounded-lg">
+                  Voir le site
+                </a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/6LTMC1C8IKBQ" target="_blank"
+                  rel="noopener noreferrer" class="btn-secondary text-sm font-medium py-2 px-4 rounded-lg">
+                  Certification
+                </a>
+              </div>
+            </article>
+
+            <article class="project-card p-6 rounded-lg shadow-md">
+              <div class="h-48 bg-gray-100 rounded-lg mb-4 overflow-hidden"
+                style="background-color: var(--secondary-light);">
+                <img
+                  src="https://isomer-user-content.by.gov.sg/85/4d9e2874-6ed5-413b-8700-b26aa05b6ef5/Faster__better__healthier___how_to_type_the__right__way.jpg"
+                  alt="Capture d'écran de l'application VemTyping" class="w-full h-full object-cover">
+              </div>
+              <h3 class="text-xl font-bold mb-2 text-primary-dark">VemTyping</h3>
+              <p class="text-gray-700 mb-4">Application de dactylographie développée pour améliorer la vitesse et la
+                précision de frappe, démontrant mes capacités en développement web interactif.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">JavaScript</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">HTML</span>
+                <span class="text-xs bg-gray-200 px-2 py-1 rounded">CSS</span>
+              </div>
+              <div class="flex gap-2 mt-auto">
+             
+                <a href="https://github.com/veronique-01/a-nex-typing" target="_blank" rel="noopener noreferrer"
+                  class="btn-secondary text-sm font-medium py-2 px-4 rounded-lg">
+                  Code source
+                </a>
+              </div>
+            </article>
           </div>
-         </div>
         </div>
-        <div>
-         <div class="flex justify-between mb-2">
-          <span class="text-white font-medium">
-           Blender
-          </span>
-          <span class="text-purple-400">
-           25%
-          </span>
-         </div>
-         <div class="skill-bar">
-          <div class="skill-progress" style="width: 25%">
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="section">
+          <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Collaborons ou Discutons !</h2>
+          <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12">
+            Je suis toujours ouvert aux nouvelles opportunités, collaborations ou simplement pour échanger sur le
+            développement web, la cybersécurité ou vos projets passionnants. N'hésitez pas à me contacter !
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="contact-card p-8 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-6 gradient-text">Informations de contact</h3>
+              <div class="space-y-6 text-gray-700">
+                <div class="flex items-start">
+                  <i class="fas fa-envelope text-2xl mr-4 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-primary-dark">Email</h4>
+                    <a href="mailto:hei.mahery.55@gmail.com"
+                      class="hover:text-accent-gold transition">hei.mahery.55@gmail.com</a>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-phone-alt text-2xl mr-4 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-primary-dark">Téléphone</h4>
+                    <a href="tel:+261329244033" class="hover:text-accent-gold transition">+261 38 95 653 90</a>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fab fa-linkedin text-2xl mr-4 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-primary-dark">LinkedIn</h4>
+                    <a href="https://www.linkedin.com/in/mahery-razafimanantsoa/" target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:text-accent-gold transition">linkedin.com/in/mahery-razafimanantsoa</a>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fab fa-github text-2xl mr-4 mt-1"></i>
+                  <div>
+                    <h4 class="font-medium text-primary-dark">GitHub</h4>
+                    <a href="https://github.com/Amarah5" target="_blank" rel="noopener noreferrer"
+                      class="hover:text-accent-gold transition">github.com/mahery55</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card p-8 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-6 gradient-text">Envoyez-moi un message</h3>
+              <form class="space-y-4" action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+                <div>
+                  <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Nom</label>
+                  <input type="text" id="name" name="name" class="input-field w-full" placeholder="Votre Nom" required>
+                </div>
+                <div>
+                  <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                  <input type="email" id="email" name="email" class="input-field w-full" placeholder="Votre Email"
+                    required>
+                </div>
+                <div>
+                  <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                  <textarea id="message" name="message" rows="5" class="input-field w-full" placeholder="Votre Message"
+                    required></textarea>
+                </div>
+                <button type="submit" class="btn-gradient py-3 px-6 rounded-lg w-full">
+                  Envoyer le message
+                </button>
+              </form>
+            </div>
           </div>
-         </div>
         </div>
-       </div>
       </div>
-     </div>
-     <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fab fa-js text-4xl text-yellow-400 mb-3">
-       </i>
-       <span class="text-white">
-        JavaScript
-       </span>
-      </div>
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fa-brands fa-python text-4xl text-blue-400 mb-3">
-       </i>
-       <span class="text-white">
-        Python
-       </span>
-      </div>
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fab fa-react text-4xl text-blue-500 mb-3">
-       </i>
-       <span class="text-white">
-        React
-       </span>
-      </div>
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fab fa-css3-alt text-4xl text-blue-300 mb-3">
-       </i>
-       <span class="text-white">
-        CSS3
-       </span>
-      </div>
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fab fa-html5 text-4xl text-orange-500 mb-3">
-       </i>
-       <span class="text-white">
-        HTML5
-       </span>
-      </div>
-      <div class="bg-gray-800 bg-opacity-50 rounded-lg p-6 flex flex-col items-center justify-center hover:bg-purple-900 hover:bg-opacity-30 transition duration-300 border border-gray-700 hover:border-purple-500">
-       <i class="fas fa-fire text-4xl text-orange-400 mb-3">
-       </i>
-       <span class="text-white">
-        Blender
-       </span>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- Projects Section -->
-   <section class="py-20 bg-gray-900 bg-opacity-70 backdrop-filter backdrop-blur-sm" id="projects">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="section-title text-3xl md:text-4xl font-bold text-white">
-       Mes
-       <span class="text-purple-400">
-        Projets
-       </span>
-      </h2>
-      <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-       Voir mes derniers r&eacute;cents projets
-      </p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Projet 1 -->
-      <div class="project-card h-80 relative">
-       <img alt="3D Product Configurator" class="w-full h-full object-cover rounded-xl" loading="lazy" src="https://www.ed2go.com/common/images/1/17194.jpg"/>
-       <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-xl">
-       </div>
-       <div class="absolute bottom-0 left-0 p-6">
-        <h3 class="text-xl font-bold text-white">
-         VemTyping
-        </h3>
-        <p class="text-gray-300">
-         Apprentissage interactif de la dactylographie
-        </p>
-        <button class="mt-2 text-purple-400 hover:text-purple-300 text-sm font-medium flex items-center" onclick="openModal('modal1')">
-         Plus details
-         <i class="fas fa-arrow-right ml-2">
-         </i>
-        </button>
-       </div>
-      </div>
-      <!-- Projet 2 -->
-      <div class="project-card h-80 relative">
-       <img alt="Billet de sortie" class="w-full h-full object-cover rounded-xl" loading="lazy" src="./assets/images/Projet_2.png"/>
-       <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-xl">
-       </div>
-       <div class="absolute bottom-0 left-0 p-6">
-        <h3 class="text-xl font-bold text-white">
-         Billet de sortie
-        </h3>
-        <p class="text-gray-300">
-         Gestion num&eacute;rique des autorisations de sortie
-        </p>
-        <button class="mt-2 text-purple-400 hover:text-purple-300 text-sm font-medium flex items-center" onclick="openModal('modal2')">
-         Plus details
-         <i class="fas fa-arrow-right ml-2">
-         </i>
-        </button>
-       </div>
-      </div>
-      <!-- Projet 3 -->
-      <div class="project-card h-80 relative">
-       <img alt="Blender IA" class="w-full h-full object-cover rounded-xl" loading="lazy" src="./assets/images/projet_3.jpg"/>
-       <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80 rounded-xl">
-       </div>
-       <div class="absolute bottom-0 left-0 p-6">
-        <h3 class="text-xl font-bold text-white">
-         Blender IA
-        </h3>
-        <p class="text-gray-300">
-         Application Web combin&eacute;e avec IA et Blender
-        </p>
-        <button class="mt-2 text-purple-400 hover:text-purple-300 text-sm font-medium flex items-center" onclick="openModal('modal3')">
-         Plus details
-         <i class="fas fa-arrow-right ml-2">
-         </i>
-        </button>
-       </div>
-      </div>
-     </div>
-     <!-- MODALE 1 -->
-     <div class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" id="modal1">
-      <div class="bg-gray-800 text-white rounded-xl p-6 max-w-lg w-full relative">
-       <button class="absolute top-2 right-2 text-white text-xl" onclick="closeModal('modal1')">
-        &times;
-       </button>
-       <h3 class="text-2xl font-bold mb-3">
-        VemTyping
-       </h3>
-       <p class="mb-3">
-        <strong>
-         Description :
-        </strong>
-        VemTyping est une application web interactive con&ccedil;ue pour aider les utilisateurs &agrave; apprendre la
-              dactylographie de mani&egrave;re ludique et progressive.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Fonctionnalit&eacute;s :
-        </strong>
-        Le&ccedil;on avec clavier virtuel, exercices personnalis&eacute;s, tests de vitesse et progression suivie.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Outils :
-        </strong>
-        JavaScript, HTML5, TailwindCSS.
-       </p>
-       <p>
-        <strong>
-         Comp&eacute;tences d&eacute;velopp&eacute;es :
-        </strong>
-        Programmation front-end, gestion dynamique du DOM, UX design responsive.
-       </p>
-      </div>
-     </div>
-     <!-- MODALE 2 -->
-     <div class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" id="modal2">
-      <div class="bg-gray-800 text-white rounded-xl p-6 max-w-lg w-full relative">
-       <button class="absolute top-2 right-2 text-white text-xl" onclick="closeModal('modal2')">
-        &times;
-       </button>
-       <h3 class="text-2xl font-bold mb-3">
-        Billet de sortie
-       </h3>
-       <p class="mb-3">
-        <strong>
-         Description :
-        </strong>
-        Application web destin&eacute;e &agrave; num&eacute;riser et automatiser la gestion des autorisations de sortie pour les
-              &eacute;tudiants dans un &eacute;tablissement scolaire.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Fonctionnalit&eacute;s :
-        </strong>
-        Cr&eacute;ation de billets de sortie, validation en temps r&eacute;el, suivi des demandes, notifications.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Outils :
-        </strong>
-        ReactJS, CSS, Firebase (backend &amp; base de donn&eacute;es).
-       </p>
-       <p>
-        <strong>
-         Comp&eacute;tences d&eacute;velopp&eacute;es :
-        </strong>
-        D&eacute;veloppement full-stack, int&eacute;gration base de donn&eacute;es en temps r&eacute;el, gestion des &eacute;tats applicatifs.
-       </p>
-      </div>
-     </div>
-     <!-- MODALE 3 -->
-     <div class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden" id="modal3">
-      <div class="bg-gray-800 text-white rounded-xl p-6 max-w-lg w-full relative">
-       <button class="absolute top-2 right-2 text-white text-xl" onclick="closeModal('modal3')">
-        &times;
-       </button>
-       <h3 class="text-2xl font-bold mb-3">
-        Blender IA
-       </h3>
-       <p class="mb-3">
-        <strong>
-         Description :
-        </strong>
-        Projet combinant intelligence artificielle et Blender pour la mod&eacute;lisation et l&rsquo;animation 3D automatis&eacute;es.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Fonctionnalit&eacute;s :
-        </strong>
-        Mod&eacute;lisation 3D assist&eacute;e par IA, animation automatique, interface utilisateur web.
-       </p>
-       <p class="mb-3">
-        <strong>
-         Outils :
-        </strong>
-        ReactJS, Python, Blender, TensorFlow.
-       </p>
-       <p>
-        <strong>
-         Comp&eacute;tences d&eacute;velopp&eacute;es :
-        </strong>
-        Programmation IA, int&eacute;gration de logiciels 3D, d&eacute;veloppement front-end et back-end.
-       </p>
-      </div>
-     </div>
-    </div>
-   </section>
-   <section class="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white" id="contact">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold">
-       Entrons en
-       <span class="text-purple-400">
-        Contact
-       </span>
-      </h2>
-      <p class="mt-4 text-lg text-gray-300">
-       Discutons de votre projet ou simplement &eacute;changeons une id&eacute;e
-      </p>
-     </div>
-     <div class="grid md:grid-cols-2 gap-12 items-start">
-      <!-- Bloc Info -->
-      <div class="space-y-6">
-       <div class="flex items-start space-x-4">
-        <i class="fas fa-map-marker-alt text-2xl text-purple-400">
-        </i>
-        <div>
-         <h4 class="font-semibold text-lg">
-          Localisation
-         </h4>
-         <p class="text-gray-300">
-          Soavimasoandro, Antananarivo
-         </p>
-        </div>
-       </div>
-       <div class="flex items-start space-x-4">
-        <i class="fas fa-envelope text-2xl text-purple-400">
-        </i>
-        <div>
-         <h4 class="font-semibold text-lg">
-          Email
-         </h4>
-         <p class="text-gray-300">
-          maheryrazafimanantsoa55@gmail.com
-         </p>
-        </div>
-       </div>
-       <div class="flex items-start space-x-4">
-        <i class="fas fa-phone-alt text-2xl text-purple-400">
-        </i>
-        <div>
-         <h4 class="font-semibold text-lg">
-          T&eacute;l&eacute;phone
-         </h4>
-         <p class="text-gray-300">
-          +261 38 95 65 390
-         </p>
-        </div>
-       </div>
-      </div>
-      <!-- Bloc Réseaux sociaux -->
-      <div class="bg-gray-800/60 rounded-2xl p-8 shadow-lg backdrop-blur">
-       <h4 class="text-2xl font-semibold mb-4">
-        Connecte-toi avec moi
-       </h4>
-       <p class="text-gray-300 mb-6">
-        Retrouvez-moi sur les plateformes suivantes pour plus de projets et de collaborations :
-       </p>
-       <div class="flex space-x-4">
-        <a class="w-10 h-10 rounded-full bg-purple-600 hover:bg-purple-700 flex items-center justify-center transition" href="https://github.com/Amarah55-coder">
-         <i class="fab fa-github text-white text-lg">
-         </i>
-        </a>
-        <a class="w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center transition" href="https://www.facebook.com/mahery.razafimanantsoa.2025/">
-         <i class="fab fa-facebook text-white text-lg">
-         </i>
-        </a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
+    </section>
   </main>
-  <!-- Footer -->
-  <footer class="py-12 bg-gray-900 border-t border-gray-800">
-   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-     <div class="mb-6 md:mb-0">
-      <span class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
-       A*Mahery
-      </span>
-     </div>
-     <div class="flex flex-col items-center md:items-end">
-      <p class="text-gray-400 mb-4">
-       &copy; 2025 Mahery razafimanantsoa. All rights reserved.
-      </p>
-      <div class="flex space-x-6">
-       <a class="text-gray-400 hover:text-white transition duration-300" href="#">
-        Privacy Policy
-       </a>
-       <a class="text-gray-400 hover:text-white transition duration-300" href="#">
-        Terms of Service
-       </a>
-       <a class="text-gray-400 hover:text-white transition duration-300" href="#">
-        Contact
-       </a>
-      </div>
-     </div>
+
+  <footer class="py-8 text-center text-gray-700 text-sm" style="background-color: var(--primary-light);">
+    <div class="max-w-7xl mx-auto px-4">
+      &copy; <span id="current-year"></span> Mahery RAZAFIMANANTSOA. Tous droits réservés.
     </div>
-   </div>
   </footer>
-  <script>
-   function openModal(id) {
-      document.getElementById(id).classList.remove("hidden");
-    }
-    function closeModal(id) {
-      document.getElementById(id).classList.add("hidden");
-    }
-  </script>
-  <script src="./scripts/script.js">
-  </script>
- </body>
+
+  <script></script>
+</body>
+
 </html>
