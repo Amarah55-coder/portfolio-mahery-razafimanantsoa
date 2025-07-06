@@ -1,1 +1,86 @@
-const mobileMenuButton=document.getElementById("mobile-menu-button");const closeMenuButton=document.getElementById("close-menu-button");const mobileMenu=document.getElementById("mobile-menu");mobileMenuButton.addEventListener("click",()=>{mobileMenu.classList.add("open");});closeMenuButton.addEventListener("click",()=>{mobileMenu.classList.remove("open");});document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{anchor.addEventListener("click",function(e){e.preventDefault();document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth",});mobileMenu.classList.remove("open");});});const skillBars=document.querySelectorAll(".skill-progress");const animateSkillBars=()=>{skillBars.forEach((bar)=>{const width=bar.style.width;bar.style.width="0";setTimeout(()=>{bar.style.width=width;},100);});};const skillsObserver=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){animateSkillBars();skillsObserver.unobserve(entry.target);}});},{threshold:0.1});const skillsSection=document.getElementById("skills");if(skillsSection){skillsObserver.observe(skillsSection);}const initThreeJS=()=>{const container=document.getElementById("canvas-container");if(!container)return;const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,0.1,1000);const renderer=new THREE.WebGLRenderer({alpha:true,antialias:true});renderer.setSize(window.innerWidth,window.innerHeight);renderer.setPixelRatio(window.devicePixelRatio);container.appendChild(renderer.domElement);const particlesGeometry=new THREE.BufferGeometry();const particlesCount=500;const posArray=new Float32Array(particlesCount*3);for(let i=0;i<particlesCount*3;i++){posArray[i]=(Math.random()-0.5)*10;}particlesGeometry.setAttribute("position",new THREE.BufferAttribute(posArray,3));const particlesMaterial=new THREE.PointsMaterial({size:0.02,color:0x7c3aed,transparent:true,opacity:0.8,});const particlesMesh=new THREE.Points(particlesGeometry,particlesMaterial);scene.add(particlesMesh);const light=new THREE.DirectionalLight(0x7c3aed,0.5);light.position.set(0,1,1);scene.add(light);const ambientLight=new THREE.AmbientLight(0xec4899,0.2);scene.add(ambientLight);camera.position.z=3;function animate(){requestAnimationFrame(animate);particlesMesh.rotation.x+=0.0005;particlesMesh.rotation.y+=0.0005;renderer.render(scene,camera);}animate();window.addEventListener("resize",()=>{camera.aspect=window.innerWidth / window.innerHeight;camera.updateProjectionMatrix();renderer.setSize(window.innerWidth,window.innerHeight);});};document.addEventListener("DOMContentLoaded",initThreeJS);gsap.from(".hero-gradient",{duration:1.5,opacity:0,y:-50,ease:"power3.out",});gsap.from(".card-3d",{duration:1.5,opacity:0,x:50,rotateY:180,ease:"back.out(1.7)",delay:0.5,});gsap.from(".section-title",{scrollTrigger:{trigger:".section-title",start:"top 80%",toggleActions:"play none none none",},duration:0.8,opacity:0,y:30,ease:"power2.out",});
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.remove('open');
+        }
+
+        if (targetElement) {
+          const headerOffset = document.querySelector('nav').offsetHeight;
+          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const closeMenuButton = document.getElementById('close-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+
+    const sections = document.querySelectorAll('.section');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1 
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); 
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'contact'];
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const headerOffset = document.querySelector('nav').offsetHeight;
+
+      sectionIds.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) {
+          const sectionTop = section.offsetTop - headerOffset - 20; 
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+            current = id;
+          }
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('active');
+        }
+      });
+    });
